@@ -5,6 +5,7 @@ const authenticateJWT = require('../middleware/authenticateJWT');
 
 router.post('/', authenticateJWT, taskController.createTask);
 router.put('/:id', authenticateJWT, taskController.editTask);
+router.put('/:id/done', authenticateJWT, taskController.doneTask);
 router.delete('/:id', authenticateJWT, taskController.deleteTask);
 
 module.exports = router;
